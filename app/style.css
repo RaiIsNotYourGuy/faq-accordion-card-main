@@ -191,7 +191,7 @@ body {
     align-items: center;
     height: 100%;
     margin: auto;
-    max-width: 325px;
+    max-width: 350px;
     flex-wrap: wrap;
 }
 
@@ -203,6 +203,7 @@ body {
     flex-direction: column;
     position: relative;
     margin: 15px;
+    box-shadow: 0px 35px 20px rgba(0, 0, 0, 0.178);
 }
 
 
@@ -215,6 +216,10 @@ hr {
     border: none;
     background-color: var(--light-grayish-blue);
     margin: 10px 0;
+}
+
+#hr-last {
+    margin-bottom: 20px;
 }
 
 .card-accordion-section-title::after {
@@ -245,14 +250,19 @@ hr {
 
 .card-header-img-mobile-fg {
     position: relative;
-    transform: translateY(-15rem) scale(0.8, 0.8);
+    transform: translateY(-15.5rem) scale(0.8, 0.8);
     object-fit: contain;
 }
 
 .card-header-img-mobile-bg {
     position: relative;
-    transform: translate(0.2rem, -1.7rem) scale(0.8, 0.8);
+    transform: translate(0.9rem, -1.7rem) scale(0.9, 0.9);
     object-fit: contain;
+}
+
+.card-header-img-desktop {
+    display: none;
+    visibility: hidden;
 }
 
 .card-header-title {
@@ -268,7 +278,11 @@ hr {
     ===========  */
 
 .card-accordion-section {
-    margin: 5px auto;
+    margin: 15px auto;
+}
+
+.card-accordion h1 {
+    transform: translateY(-1.2rem);
 }
 
 .card-accordion-section-title {
@@ -297,6 +311,7 @@ hr {
     margin: 10px 0 0;
     color: var(--dark-grayish-blue);
     line-height: 1.5;
+    padding-right: 15px;
 }
 
 
@@ -351,4 +366,38 @@ hr {
     }
 }
 
-@media (max-width: 1000px) {}
+@media (min-width: 1000px) {
+    .container {
+        max-width: 800px;
+    }
+    .card {
+        max-width: 925px;
+        max-height: 510px;
+        flex-direction: row;
+        padding: 0;
+    }
+    .card-header {
+        height: 100%;
+        width: 50%;
+    }
+    .card-header-img-mobile {
+        display: none;
+        visibility: hidden;
+    }
+    .card-header-img-desktop {
+        display: flex;
+        visibility: visible;
+    }
+    #desktop-bg {
+        overflow: hidden;
+    }
+    #desktop-bg-1 {
+        transform: scale(1, 1) translate(-36.5rem, -18.5rem);
+    }
+    #desktop-bg-2 {
+        transform: scale(1, 1) translate(-66rem, 4.5rem);
+    }
+    #desktop-fg-1 {
+        transform: scale(1, 1) translate(-8.1rem, -46.1rem);
+    }
+}
