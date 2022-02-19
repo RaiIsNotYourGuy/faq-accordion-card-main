@@ -1,0 +1,354 @@
+/*  ===========
+    Variables
+    ===========  */
+
+:root {
+    /* Primary */
+    /* Text */
+    --dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /* Gradient */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    /* Neutral */
+    /* Text */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    /* Dividers */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+
+/*  ===========
+    Reset
+    ===========  */
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*  ===========
+    Layout
+    ===========  */
+
+html {
+    height: 100%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(var(--soft-violet), var(--soft-blue)) fixed;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: "Kumbh Sans", sans-serif;
+    object-fit: fill;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: auto;
+    max-width: 325px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border-radius: 25px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 15px;
+}
+
+
+/*  ===========
+    Components
+    ===========  */
+
+hr {
+    height: 1px;
+    border: none;
+    background-color: var(--light-grayish-blue);
+    margin: 10px 0;
+}
+
+.card-accordion-section-title::after {
+    flex-shrink: 0;
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: auto;
+    content: "";
+    background-image: url("../images/icon-arrow-down.svg");
+    background-repeat: no-repeat;
+    background-size: 0.75rem;
+    transform: translateY(0.25rem);
+    transition: 0.3s;
+}
+
+
+/*  ===========
+    Header
+    ===========  */
+
+.card-header {
+    margin-bottom: 30px;
+}
+
+.card-header-img-mobile {
+    height: 100px;
+}
+
+.card-header-img-mobile-fg {
+    position: relative;
+    transform: translateY(-15rem) scale(0.8, 0.8);
+    object-fit: contain;
+}
+
+.card-header-img-mobile-bg {
+    position: relative;
+    transform: translate(0.2rem, -1.7rem) scale(0.8, 0.8);
+    object-fit: contain;
+}
+
+.card-header-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    color: var(--dark-desaturated-blue);
+}
+
+
+/*  ===========
+    Main
+    ===========  */
+
+.card-accordion-section {
+    margin: 5px auto;
+}
+
+.card-accordion-section-title {
+    position: relative;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--very-dark-grayish-blue);
+    cursor: pointer;
+    margin-right: auto;
+    display: flex;
+    margin: 15px 0 10px;
+    transition-duration: 0.5s;
+}
+
+.card-accordion-section-body {
+    position: relative;
+    max-height: 0;
+    font-size: 20px;
+    text-align: justify;
+    overflow: hidden;
+    transition: 0.5s;
+    opacity: 0;
+    display: flex;
+    font-weight: 400;
+    font-size: 12px;
+    margin: 10px 0 0;
+    color: var(--dark-grayish-blue);
+    line-height: 1.5;
+}
+
+
+/*  ===========
+    Footer
+    ===========  */
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: white;
+}
+
+.attribution a {
+    color: hsl(345, 18%, 13%);
+}
+
+
+/*  ===========
+    Animations
+    ===========  */
+
+.card-accordion-section.active .card-accordion-section-body {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.card-accordion-section.active .card-accordion-section-title {
+    font-weight: 700;
+}
+
+.card-accordion-section.active .card-accordion-section-title::after {
+    transform: rotate(-0.5turn);
+}
+
+.card-accordion-section-title:hover {
+    color: var(--soft-red);
+}
+
+
+/*  ===========
+    @Media
+    ===========  */
+
+@media (max-width: 290px) {
+    .card {
+        width: 250px;
+    }
+    footer {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+@media (max-width: 1000px) {}
